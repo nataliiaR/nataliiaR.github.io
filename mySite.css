@@ -27,13 +27,13 @@ html, body {
 	color: #009933;
 }
 .navbar-inverse .navbar-nav > li > a {
-    font-family: 'Times New Roman';
+    font-family: Times New Roman;
     font-size: 18px;
     color: white;
 
 }
 a{
-    font-family: 'Times New Roman';
+    font-family:Times New Roman;
     font-size: 18px;
 
 }
