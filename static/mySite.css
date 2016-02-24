@@ -43,7 +43,14 @@ a{
 
 
 }
+#map_wrapper {
+    height: 300px;
+}
 
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
 
 section.home-section{
 	height: auto !important;
