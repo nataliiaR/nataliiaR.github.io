@@ -50,7 +50,7 @@ section.home-section{
 	min-height: 100%;
 	overflow: hidden;
 	padding-top: 150px;
-	background: url(meCover.jpg) no-repeat center;
+	background: url(cover/meCover.jpg) no-repeat center;
 	background-size: cover;
 	/*opacity: 0.5;*/
 
@@ -63,7 +63,7 @@ section.home-section{
         min-height: 100%;
         overflow: hidden;
         padding-top: 150px;
-        background: url(meCover_2.jpg) no-repeat center;
+        background: url(cover/meCover_2.jpg) no-repeat center;
         background-size: cover;
     }
     h1.rcorners2 {
@@ -99,7 +99,7 @@ section.home-section{
         min-height: 100%;
         overflow: hidden;
         padding-top: 150px;
-        background: url(meCover_3.jpg) no-repeat center;
+        background: url(cover/meCover_3.jpg) no-repeat center;
         background-size: cover;
     }
     h1.rcorners2 {
@@ -122,7 +122,7 @@ section.home-section{
         min-height: 100%;
         overflow: hidden;
         padding-top: 150px;
-        background: url(meCover_4.jpg) no-repeat center;
+        background: url(cover/meCover_4.jpg) no-repeat center;
         background-size: cover;
     }
     h1.rcorners2 {
@@ -146,7 +146,7 @@ section.home-section{
         min-height: 100%;
         overflow: hidden;
         padding-top: 150px;
-        background: url(meCover_flip.jpg) no-repeat center;
+        background: url(cover/meCover_flip.jpg) no-repeat center;
         background-size: cover;
     }
     h1.rcorners2 {

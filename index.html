@@ -9,7 +9,7 @@
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"> </script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="mySite.js"></script>
+<script type="text/javascript" src="js/mySite.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
@@ -18,12 +18,12 @@
 
   <!-- Latest compiled and minified JQuery libs -->
  
-  <script src="boot_v3_2_0_dest.js"></script>
+  <script src="js/boot_v3_2_0_dest.js"></script>
 
-  <script src="textillate.js"></script>  
-<script src="main.js"></script>
+  <script src="js/textillate.js"></script>  
+<script src="js/main.js"></script>
 
-<link rel="stylesheet" type="text/css" href="mySite.css">
+<link rel="stylesheet" type="text/css" href="static/mySite.css">
 
 
 <script src="http://underscorejs.org/underscore-min.js" type="text/javascript"></script>
@@ -99,31 +99,31 @@
 
           if (hours >8&&hours<20){
             if(reOb.weather[0].main=="Clear"){
-              $("#imgi-"+id).attr("src","Sun.png");
+              $("#imgi-"+id).attr("src","static/weather/Sun.png");
             } else if (reOb.weather[0].main=="Clouds"){
-              $("#imgi-"+id).attr("src","Clouds.png");
+              $("#imgi-"+id).attr("src","static/weather/Clouds.png");
             } else if (reOb.weather[0].main=="Rain"){
-              $("#imgi-"+id).attr("src","Rain.png");
+              $("#imgi-"+id).attr("src","static/weather/Rain.png");
             } else if (reOb.weather[0].main=="Snow"){
-              $("#imgi-"+id).attr("src","Snow.png");
+              $("#imgi-"+id).attr("src","static/weather/Snow.png");
             }  else if (reOb.weather[0].main=="Sleet"){
-              $("#imgi-"+id).attr("src","Sleet.png");
+              $("#imgi-"+id).attr("src","static/weather/Sleet.png");
             } else if (reOb.weather[0].main=="Storm"){
-              $("#imgi-"+id).attr("src","Storm.png");
+              $("#imgi-"+id).attr("src","static/weather/Storm.png");
             } 
           }else{
             if(reOb.weather[0].main=="Clear"){
-              $("#imgi-"+id).attr("src","Bright_Moon.png");
+              $("#imgi-"+id).attr("src","static/weather/Bright_Moon.png");
             } else if (reOb.weather[0].main=="Clouds"){
-              $("#imgi-"+id).attr("src","Cloudy_Night.png");
+              $("#imgi-"+id).attr("src","static/weather/Cloudy_Night.png");
             } else if (reOb.weather[0].main=="Rain"){
-              $("#imgi-"+id).attr("src","Rain.png");
+              $("#imgi-"+id).attr("src","static/weather/Rain.png");
             } else if (reOb.weather[0].main=="Snow"){
-              $("#imgi-"+id).attr("src","Snow.png");
+              $("#imgi-"+id).attr("src","static/weather/Snow.png");
             }  else if (reOb.weather[0].main=="Sleet"){
-              $("#imgi-"+id).attr("src","Sleet.png");
+              $("#imgi-"+id).attr("src","static/weather/Sleet.png");
             } else if (reOb.weather[0].main=="Storm"){
-              $("#imgi-"+id).attr("src","Storm.png");
+              $("#imgi-"+id).attr("src","static/weather/Storm.png");
             } 
           }
         }
@@ -276,7 +276,7 @@
       <br/> 
       <div class="row">
         <div class="col-sx-12 col-sm-6 col-md-4 col-ld-4">
-          <img class="img-circle" src="ukraine1.jpg"/>
+          <img class="img-circle" src="static/lviv-photo/ukraine1.jpg"/>
           <p> Image is taken from <a href="http://galfinance.com.ua/">here </a></p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-8 col-ld-8"> 
@@ -312,70 +312,70 @@
             </ol>
             <div class="carousel-inner">
               <div class="item active">
-                <img class="displayed" src="img1.jpg" alt="Washington" />
+                <img class="displayed" src="static/lviv-photo/img1.jpg" alt="Washington" />
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> Panorama of the city</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img2.jpg" alt="rock"/>
+                <img class="displayed" src="static/lviv-photo/img2.jpg" alt="rock"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> One of the city center streets</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img3.jpg" alt="city"/>
+                <img class="displayed" src="static/lviv-photo/img3.jpg" alt="city"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p>  Ukrainian Statue of Liberty in Lviv. It is placed on the facade of the State Museum of Ethnography of Ukraine</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img4.jpg" alt="river"/>
+                <img class="displayed" src="static/lviv-photo/img4.jpg" alt="river"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> Market Square- the main square of the city</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img5.jpg" alt="river"/>
+                <img class="displayed" src="static/lviv-photo/img5.jpg" alt="river"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> Lviv National Academic Opera and Ballet Theater named after S.A. Krushelnitskaya</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img6.jpg" alt="river"/>
+                <img class="displayed" src="static/lviv-photo/img6.jpg" alt="river"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p>Sleeping lions one of the visit cards of Lviv, their sculpture can be found everywhere</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img7.jpg" alt="river"/>
+                <img class="displayed" src="static/lviv-photo/img7.jpg" alt="river"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> Church of St. Olga and Elizabeth stands on Kropivnitsky Square in Lviv. It is a cathedral of Greek Catholic Church built in neo-Gothic style in 1903-1911.</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img8.jpg" alt="river"/>
+                <img class="displayed" src="static/lviv-photo/img8.jpg" alt="river"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> Mytna square view</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img9.jpg" alt="river"/>
+                <img class="displayed" src="static/lviv-photo/img9.jpg" alt="river"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> Lions near Lviv City Hall on Market Square</p>
                 </div>
               </div>
               <div class="item">
-                <img class="displayed" src="img10.jpg" alt="river"/>
+                <img class="displayed" src="static/lviv-photo/img10.jpg" alt="river"/>
                 <div class="carousel-caption">
                   <h3>Lviv, Ukraine</h3>
                   <p> Coffee and chocolate are visit cards of the city. Their aroma is everywhere in the city center</p>
@@ -404,8 +404,8 @@
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
-            <p> Via Email : <a href="mailto:nataliia.ryzha@gmail.com" style="text-decoration:none"><img src="Message Filled.png"/>nataliia.ryzha@gmail.com</a> </p>
-            <p> Via Linkedin :<a href="#" onClick="window.open('http://www.linkedin.com/in/nataliiaryzha', '_blank')"><img src="linkedin.png"/></a></p>
+            <p> Via Email : <a href="mailto:nataliia.ryzha@gmail.com" style="text-decoration:none"><img src="static/icons/Message Filled.png"/>nataliia.ryzha@gmail.com</a> </p>
+            <p> Via Linkedin :<a href="#" onClick="window.open('http://www.linkedin.com/in/nataliiaryzha', '_blank')"><img src="static/icons/linkedin.png"/></a></p>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6 about">
             This site was developed to show some of my knowledge in such web technologies as HTML5, CSS3, Bootstrap, JavaScript, JQuery, AJAX, JSON underscore.js and GitHub. I know and can do much more, as web developing is my greatest passion.
