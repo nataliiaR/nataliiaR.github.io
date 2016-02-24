@@ -26,7 +26,7 @@ function initialize() {
     var infoWindowContent = [
         ['<div class="info_content">' +
         '<h3><a target="_blank" href="https://www.google.com/maps/place/Ukraine/@48.2956339,26.6946547,6z/data=!3m1!4b1!4m2!3m1!1s0x40d1d9c154700e8f:0x1068488f64010?hl=en-US"> Ukraine </a></h3>' +
-        '<p>Ukraine my Homeland.</p>' +        '</div>'],
+        '<p>My Homeland.</p>' +        '</div>'],
         ['<div class="info_content">' +
         '<h3> <a target="_blank" href = "https://www.google.com/maps/place/Lviv,+Lviv+Oblast,+Ukraine/@49.8326679,23.9421956,12z/data=!3m1!4b1!4m2!3m1!1s0x473add7c09109a57:0x4223c517012378e2?hl=en-US">Lviv</a></h3>' +
         '<p>My Hometown.</p>' +
@@ -60,7 +60,7 @@ function initialize() {
 
     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        this.setZoom(5);
+        this.setZoom(3);
         google.maps.event.removeListener(boundsListener);
     });
     

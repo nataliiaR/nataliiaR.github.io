@@ -114,32 +114,32 @@
              });
         }
               //set cookies for task status
-      function setCookie(cname,cvalue) {
-        var d = new Date();
-        d.setTime(d.getTime() + (30*24*60*60*1000));
-        var expires = "expires=" + d.toGMTString();
-        document.cookie = cname+"="+cvalue+"; "+expires;
-      }
-
-      function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0)==' ') c = c.substring(1);
-          if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        function setCookie(cname,cvalue) {
+          var d = new Date();
+          d.setTime(d.getTime() + (30*24*60*60*1000));
+          var expires = "expires=" + d.toGMTString();
+          document.cookie = cname+"="+cvalue+"; "+expires;
         }
-        return "";
-      }
-      // check browser and set value/color for task status based on cookies during page reloading
-      function gg() {
-          if (getCookie("deg")=="C"){
-            $("#degF"+2).css("display","none");
-            $("#degC"+2).css("display","initial");
-          }
-          else if (getCookie("deg")=="F"){
-            $("#degC"+2).css("display","none");
-            $("#degF"+2).css("display","initial");
-          }
 
+        function getCookie(cname) {
+          var name = cname + "=";
+          var ca = document.cookie.split(';');
+          for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+          }
+          return "";
         }
+        // check browser and set value/color for task status based on cookies during page reloading
+        function gg() {
+            if (getCookie("deg")=="C"){
+              $("#degF"+2).css("display","none");
+              $("#degC"+2).css("display","initial");
+            }
+            else if (getCookie("deg")=="F"){
+              $("#degC"+2).css("display","none");
+              $("#degF"+2).css("display","initial");
+            }
+
+          }
