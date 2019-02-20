@@ -1,4 +1,4 @@
-        function getLocation() {
+       /*function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
@@ -9,14 +9,14 @@
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
             performSearch(2, lat,lon);
-            getDegree(2);           
+            getDegree(2);
             document.getElementById("geoPosBox").innerHTML = "Your coordinates (Latitude: " + position.coords.latitude +
             "&nbsp; Longitude: " + position.coords.longitude + ")&nbsp; might be used for the search result ordering";
-            
-        }
-        
+
+        }*/
+
         function performSearch(id, x,y) {
-        
+
             //var q = $("#search").val();
             $("#coor").innerHTML = "Latitude: " + x + "&nbsp; Longitude: " + y + "&nbsp";
             //q = q.trim();
@@ -25,7 +25,7 @@
                 url: "http://api.openweathermap.org/data/2.5/weather?lat="+x+"&lon="+y+"&appid=1c87a7a7f766cd5b4d9e91dfdf1d3ed2",
                 type: "get",
                 success: function(response, textStatus, jqXHR){
-                    
+
                     respObj = JSON.parse(jqXHR.responseText);
                     //document.getElementById("button").disabled = "disabled";
                     var searchOut = _.template( $('#search-output').html())( {weather: respObj, link2: "http://openweathermap.org/Maps?zoom=12&lat="+x+"&lon="+y+"&layers=B0FTTFF", id: id } );
@@ -57,7 +57,7 @@
               $("#imgi-"+id).attr("src","static/weather/Sleet.png");
             } else if (reOb.weather[0].main=="Storm"){
               $("#imgi-"+id).attr("src","static/weather/Storm.png");
-            } 
+            }
           }else{
             if(reOb.weather[0].main=="Clear"){
               $("#imgi-"+id).attr("src","static/weather/Bright_Moon.png");
@@ -71,7 +71,7 @@
               $("#imgi-"+id).attr("src","static/weather/Sleet.png");
             } else if (reOb.weather[0].main=="Storm"){
               $("#imgi-"+id).attr("src","static/weather/Storm.png");
-            } 
+            }
           }
         }
 
@@ -86,7 +86,7 @@
         }
         function clearF(){
            $("#searchResult").empty();
-        }  
+        }
 
         function getDegree(id){
 
@@ -96,11 +96,11 @@
                 $("#degC"+id).css("display","initial");
               }  else{
                   $("#degF"+id).css("display","none");
-              }    // $("#degC").attr("visibility","vissible");  
+              }    // $("#degC").attr("visibility","vissible");
               var scale=$("#degTC").val();
               setCookie("deg",scale);
              });
-              
+
           $("#degTF").click(function(event){
               if ($("#degF"+id).css("display")=="none")
               {
@@ -108,7 +108,7 @@
                 $("#degC"+id).css("display","none");
               }else{
                     $("#degC"+id).css("display","none");
-              }  // $("#degC").attr("visibility","vissible");  
+              }  // $("#degC").attr("visibility","vissible");
               var scale=$("#degTF").val();
               setCookie("deg",scale);
              });
