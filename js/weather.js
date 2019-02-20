@@ -75,7 +75,7 @@
           }
         }
 
-       /* function hide() {
+        /*function hide() {
             document.getElementById("button").style.visibility="hidden";
         }
         function showGYW() {
