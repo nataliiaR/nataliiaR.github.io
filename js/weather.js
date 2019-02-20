@@ -75,12 +75,12 @@
           }
         }
 
-        function hide() {
+       /* function hide() {
             document.getElementById("button").style.visibility="hidden";
         }
         function showGYW() {
             document.getElementById("button").style.visibility="visible";
-        }
+        }*/
         function show() {
             document.getElementById("temp").style.visibility="visible";
         }
