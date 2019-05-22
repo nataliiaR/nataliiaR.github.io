@@ -1,3 +1,3 @@
-# nataliiar.github.io
+# Basic-Portfolio
 
-My personal web site
+The page can be viewed live at https://nataliiar.github.io/Basic-Portfolio/

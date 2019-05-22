@@ -1,267 +1,39 @@
-<!Document html>
+<!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="static/mySite.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-  <script src="http://code.jquery.com/jquery-2.1.4.min.js"> </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/mySite.js"></script>
-  <script type="text/javascript" src="js/map.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-
-  <script src="js/boot_v3_2_0_dest.js"></script>
-  <script src="js/textillate.js"></script>
-  <script src="js/main.js"></script>
-  <script src="http://underscorejs.org/underscore-min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="js/weather.js"> </script>
-
-  <script type="text/template" id="search-output">
-    <div class="container" id="template-<%=id%>">
-            <div class="div-table">
-              <div class="div-table-row">
-                  <div class="div-table-col" style="padding-top: 5%; font-size:25px; font-family:Times New Roman"> <p><%=weather.name+","+weather.sys.country%></p></div>
-                  <div class="div-table-col"><img id="imgi-<%=id%>" src=imgi alt="Processing.."/></div>
-                  <div class="div-table-col" id="degC<%=id%>" style="padding-top: 5%; font-size:25px; font-family:Times New Roman"><%=Math.round(weather.main.temp-273)+"&deg;C"%></div>
-                  <div class="div-table-col" id="degF<%=id%>" style="padding-top: 5%; font-size:25px; font-family:Times New Roman; display:none"><%=Math.round(weather.main.temp*9/5 - 459.67)+"&deg;F"%></div>
-              </div>
-              <div class="div-table-row">
-                <p>
-                 <a  id ="link2" target="popup" onclick="window.open('<%=link2%>','name')">Discover map</a> | <a style="text-decoration:none" href="http://openweathermap.org">OpenWeatherMap</a> is a weather source
-                </p>
-              </div>
-              <div class="div-table-row" id="temp" style="visibility:hidden"> <br/><h4 class="weath" style="font-family:'Times New Roman', Verdana, cursive"> Weather around you </h4>
-              </div>
+    <head>
+        <title> Welcome to my web site </title>
+        <link rel = "stylesheet" type = "text/css" href="assets/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-navigation">
+                <h1 class="left-part"> Nataliia Ryzha</h1>
+                <nav class="right-part">
+                    <span> <a class ="nav-link" href="index.html">About</a> </span> |
+                    <span> <a class ="nav-link" href="portfolio.html">Portfolio</a> </span>|
+                    <span> <a class ="nav-link" href="contact.html">Contact</a></span>
+                </nav>
+                <div class="clear"></div>
             </div>
-    </div>
-  </script>
-
-</head>
-<body id="page-top" data-spy="scroll" data-twttr-rendered="true" data-target=".navbar">
-
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="" class="navbar-brand" style="font-family:'Times New Roman', Verdana, cursive">Page visits</a>
-        <a href='http://www.counter12.com' class="navbar-brand"><img src='http://www.counter12.com/img-BaDy8cCd-40.gif' border='0' alt='free web counter'></a><script type='text/javascript' src='http://www.counter12.com/ad.js?id=BaDy8cCd'></script>
-      </div>
-      <div class="navbar-collapse collapse" style="height: 1px">
-
-        <ul class="nav navbar-nav navbar-right">
-          <li> <a href="#top">Home</a></li>
-          <li> <a href="#who-i-am">About</a></li>
-          <li> <a href="#gallery">Gallery</a></li>
-          <li> <a href="#contact-me">Contact</a></li>
-        </ul>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" style="font-family:'Times New Roman', Verdana, cursive;" data-target="#myModal" onclick="performSearch(1, 47.61, -122.192);clearF();getDegree(1)">
-            Get weather
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" style="border-bottom:none">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title weath" id="myModalLabel" style="font-family:'Times New Roman', Verdana, cursive; font-size:18px">My weather</h4>
-            <div align="right">
-              <input id="degTC" type="button" name="degTC" value="&deg;C">
-              <input id="degTF" type="button" name="degTF" value="&deg;F"></div>
-          </div>
-          <div class="modal-body" style="padding-top:none">
-            <div id="geoPosBox" style="color: #708090; font-size: x-small; visibility:hidden"></div>
-
-            <div id='searchResult'></div>
-            <!-- <div>
-              <button id="button" type="button" onclick="getLocation();hide();show()" style="font-family:'Times New Roman', Verdana, cursive; color:blue">
-              Get yours weather </button>
-            </div> -->
-          </div>
+        </header>
+        <div class="body">
+            <section class = "content-section">
+                <h1 id="header-on-page">  About me</h1>
+                <img id="my-image" src="assets/images/photo.jpg"/>
+                <div class="text-about-me">
+                    <p> I decided to create this page because I would like to tell a bit about myself. Have you already guessed that I'm a coffee person?</p>
+                    <p> Not that long ago, I moved to the United States and settled down in Seattle (coffee also mattered) from my home country Ukraine. If you have not heard about Ukraine yet, please check this out - <a class ="home-country nav-link" href="https://ukrainer.net/en/" target="_blank">Ukraine</a>. Perhaps it would be your next trip destination!</p>
+                    <p> Also want to mention that I'm very passionate about web development... being a creative person, web development looks like a kind of digital art to me! </p>
+                    <p> Oh, the section space runs out, so I'll be short... </p>
+                    <p> Saying that, feel free to reach out or check my portfolios!</p>  
+               </div>
+               <div class="clear"></div>
+            </section>
         </div>
-      </div>
-  </div>
-
-  <section id="top" class="home-section">
-      <div>
-        <h1 class="rcorners2" style="font-family:'Times New Roman', Verdana, cursive"> Ukrainian girl in the USA </h1>
-      </div>
-  </section>
-
-  <section id="who-i-am" class="about-section">
-    <div class="container">
-      <br/>
-      <br/>
-      <br/>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-            <h1 class="rcorners2" style="font-family:'Times New Roman', Verdana, cursive; font-size:60px"> Welcome to my web site </h1>
+        <div class ="footer">
+            <footer>
+             Copyright &#169;
+            </footer>
         </div>
-      </div>
-      <br/>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12"> <p class ="about" style="font-family:'Times New Roman', Verdana, cursive; font-size:30px"> I am Nataliia and I moved into the USA from Ukraine few years ago. A lot has changed since then but my passion to web development stays the same </p>
-        <p style="font-family:'Times New Roman', Verdana, cursive; font-size:30px">   So while discovering the USA, it would be pleasure for me to introduce you my Homeland a little... </p>
-          </div>
-      </div>
-      <br/>
-      <div class="row">
-        <div class="col-sx-12 col-sm-6 col-md-4 col-ld-4">
-          <img class="img-circle" src="static/lviv-photo/ukraine1.jpg"/>
-          <p> Image is taken from <a href="http://galfinance.com.ua/">here </a></p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-8 col-ld-8" id="map_wrapper">
-            <div id="map_canvas" class="mapping"></div>
-
-          <!--<p class ="about" padding-top="10px">So.... I am from Ukraine, it is located in southeast Europe, and is bordered by Belarus on the north, by Russia on the north and east, by the Black Sea on the south, by Moldova and Romania on the southwest, and by Hungary, Slovakia, and Poland on the west.</p>
-          <p class ="about"> I was born and lived in western part of Ukraine which border with Poland in city of Lviv. It is very old europeanean city, first mentioned in the Halych-Volhynian Chronicle regarding the events that were dated 1256.</p> -->
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-         <p class="about"> On <span style="font-family:'Times New Roman', Verdana, cursive; font-size:18px"><a href="#gallery" style="text-decoration:none; color:#009933">Gallery</a> </span> page of my web site you can see some images of beautiful city of Lviv
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="container">
-      <div class="row" style="padding-top:55px">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-          <div class="carousel slide" id="screenshot-carousel" data-ride="carousel" width="100%" height="100%">
-            <ol class="carousel-indicators">
-              <li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="1"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="2"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="3"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="4"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="5"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="6"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="7"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="8"></li>
-              <li data-target="#screenshot-carousel" data-slide-to="9"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="item active">
-                <img class="displayed" src="static/lviv-photo/img1.jpg" alt="Washington" />
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> Panorama of the city</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img2.jpg" alt="rock"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> One of the city center streets</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img3.jpg" alt="city"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p>  Ukrainian Statue of Liberty in Lviv. It is placed on the facade of the State Museum of Ethnography of Ukraine</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img4.jpg" alt="river"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> Market Square- the main square of the city</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img5.jpg" alt="river"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> Lviv National Academic Opera and Ballet Theater named after S.A. Krushelnitskaya</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img6.jpg" alt="river"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p>Sleeping lions one of the visit cards of Lviv, their sculpture can be found everywhere</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img7.jpg" alt="river"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> Church of St. Olga and Elizabeth stands on Kropivnitsky Square in Lviv. It is a cathedral of Greek Catholic Church built in neo-Gothic style in 1903-1911.</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img8.jpg" alt="river"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> Mytna square view</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img9.jpg" alt="river"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> Lions near Lviv City Hall on Market Square</p>
-                </div>
-              </div>
-              <div class="item">
-                <img class="displayed" src="static/lviv-photo/img10.jpg" alt="river"/>
-                <div class="carousel-caption">
-                  <h3>Lviv, Ukraine</h3>
-                  <p> Coffee and chocolate are visit cards of the city. Their aroma is everywhere in the city center</p>
-                </div>
-              </div>
-            </div> <!--end carousele inner-->
-          </div> <!--end carousele-->
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p style="text-align:right"> Image was taken from <a href="http://ukrainetrek.com/" style="text-decoration:none">ukrainetrek.com</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact-me" class="contact-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
-            <h1 class="rcorners2" style="font-family:'Times New Roman', Verdana, cursive; font-size:45px">Ways to say hello:</h1>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
-            <h1 class="rcorners2" style="font-family:'Times New Roman', Verdana, cursive; font-size:45px">Purpose of site:</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
-            <p> Via Email : <a href="mailto:nataliia.ryzha@gmail.com" style="text-decoration:none"><img src="static/icons/Message Filled.png"/>nataliia.ryzha@gmail.com</a> </p>
-            <p> Via Linkedin :<a href="#" onClick="window.open('http://www.linkedin.com/in/nataliiaryzha', '_blank')"><img src="static/icons/linkedin.png"/></a></p>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6 about">
-            This site was developed to show some of my knowledge in such web technologies as HTML5, CSS3, Bootstrap, JavaScript, JQuery, AJAX, Google Map API, JSON underscore.js and GitHub.
-          </div>
-        </div>
-        <div> <p style="text-align:right;font-family:'Indie Flower', Verdana, cursive;padding-top:20%"> Copyright@NataliiaRyzha2015</p>
-        </div>
-      </div>
-  </section>
-
-  </body>
+    </body>
 </html>
